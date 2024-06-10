@@ -1,0 +1,92 @@
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+*{
+    
+}
+
+/* Aniamtion ตอนเข้าเว็บไซต์ */
+@keyframes entertransition {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+body{
+    font-family: "Prompt", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    animation: entertransition 1s; /* เล่น Animation เข้าเว็บไซต์*/
+}
+
+div{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h1 , p , button{
+    margin: 1rem;
+}
+/* กำหนด Buttone layer 1 ให้มีแค่ font */
+button{
+    font-family: "Prompt", sans-serif;
+    cursor: pointer;
+    border: none;
+    position: relative;
+    background: none;
+    overflow: hidden;
+    transition: 0.5s;
+    font-size: 25px;
+    color: white;
+    padding: 10px 30px;
+}
+
+/* กำหนด button layer 2 ให้มีแค่ background สีส้ม*/
+button::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: orange;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -2;
+}
+
+/* กำหนด layer 3 ให้มี background สีแดง */
+button::after{
+    content:'';
+    width: 0%;
+    height: 100%;
+    position: absolute;
+    background: #FF4655;
+    left: -10px ;
+    top: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+
+/* เมื่อเอาเมาส์ไปวางจะสั่ง layer 3 ให้ยืดออกแนวเฉียง */
+button:hover::after{
+    width: 120%;
+    transform: skew(-20deg);
+}
+
+@media only screen and (max-width: 450px){
+    *{
+        padding: 0 1rem;
+    }
+    p{
+        white-space: nowrap;
+    }
+}

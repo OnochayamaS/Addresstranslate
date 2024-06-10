@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HBD</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>  
+    <div>
+        <video poster="99.jpg" playsinline autoplay muted loop>
+            <source src="99.mp4" >
+        </video>
+        <audio id="song" loop>
+            <source src="99.mp3">
+        </audio>
+    </div>
+
+    <script>
+        window.addEventListener('click', () =>{
+            document.getElementById("song").play();
+        })
+    </script>
+</body>
+</html>
